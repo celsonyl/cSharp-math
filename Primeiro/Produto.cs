@@ -5,9 +5,27 @@ using System.Globalization;
 namespace Primeiro
 {
     class Produto{
-        public String Nome;
-        public Double Preco;
-        public int Quantidade;
+        private  String _nome;
+        public Double Preco { get; private set; }
+        public int Quantidade { get; private set; }
+        public Produto(){}
+
+        public Produto(String nome,double preco,int quantidade){
+            _nome = nome;
+            Preco = preco;
+            Quantidade = quantidade;
+        }
+       public String Nome
+        {
+            get { return _nome; }
+            set{
+                if (value != null && value.Length > 1)
+                {
+                    _nome = value;
+
+                }
+               }
+        }
 
         public double ValorTotalEmEstoque(){
             return Preco * Quantidade;
@@ -23,7 +41,7 @@ namespace Primeiro
 
         public override string ToString()
         {
-            return Nome + 
+            return _nome + 
                 ", $" + Preco.ToString("F2",CultureInfo.InvariantCulture)
                 + ", "
                 + Quantidade

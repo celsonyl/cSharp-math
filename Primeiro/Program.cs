@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Numerics;
 
 namespace Primeiro
 {
@@ -10,6 +11,14 @@ namespace Primeiro
         {
 
 
+
+
+
+
+
+
+
+            /*
             Console.WriteLine("Entre o valor do raio: ");
             double raio = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
@@ -19,38 +28,61 @@ namespace Primeiro
             Console.WriteLine("Circunferencia: " + circ.ToString("F2", CultureInfo.InvariantCulture));
             Console.WriteLine("Volume: " + volume.ToString("F2", CultureInfo.InvariantCulture));
             Console.WriteLine("Valor de PI: " + Calculadora.pi.ToString("F2", CultureInfo.InvariantCulture));
-
-
-            /*
-             * --------------------------EXERCICIO PRODUTO----------------------------------------
-            Produto p = new Produto();
-
-            Console.WriteLine("Entre os dados do produto:");
-            Console.Write("Nome: ");
-            p.Nome = Console.ReadLine();
-            Console.Write("Preço: ");
-            p.Preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            Console.Write("Quantidade: ");
-            p.Quantidade = int.Parse(Console.ReadLine());
-
-            Console.WriteLine();
-            Console.WriteLine("Dados do produto: " + p);
-
-            Console.WriteLine();
-            Console.Write("Digite o numero de protudos a ser adicionado ao estoque: ");
-            int qte = int.Parse(Console.ReadLine());
-            p.AdicionarProdutos(qte);
-
-            Console.WriteLine("Dados atualizados: " + p);
-            Console.WriteLine();
-
-            Console.Write("Digite o numero de protudos a ser removido do estoque: ");
-            qte = int.Parse(Console.ReadLine());
-            p.RemoverProdutos(qte);
-
-            Console.WriteLine("Dados atualizados: " + p);
-            Console.WriteLine();
             */
+
+
+            // --------------------------EXERCICIO SAQUE----------------------------------------
+            Console.WriteLine("Entre com o numero da Conta: ");
+            int numeroConta = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.WriteLine("Entre com o titular da Conta: ");
+            String titularConta = Console.ReadLine();
+            Console.WriteLine("Haverá depósito Inicial? (s/n)");
+            String verify = Console.ReadLine();
+            if(verify == "s" || verify=="S")
+            {
+                Console.WriteLine("Entre com o valor do Depósito: ");
+                Double deposito = Double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                Conta p = new Conta(numeroConta,titularConta,deposito);
+                p.exibirDados();
+
+                Console.WriteLine("Entre um valor para Depósito: ");
+                Double quantidade = Double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                p.AdicionaSaldo(quantidade);
+
+                Console.WriteLine("Dados Atualizados!\n");
+                p.exibirDados();
+
+                Console.WriteLine("Entre com o valor para saque: ");
+                quantidade = Double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                p.RetiraSaldo(quantidade);
+                Console.WriteLine("Dados Atualizados!\n");
+                p.exibirDados();
+            }
+            else if(verify == "n" || verify=="N"){
+                Conta p = new Conta(numeroConta, titularConta);
+                p.exibirDados();
+
+                Console.WriteLine("Entre um valor para Depósito: ");
+                Double quantidade = Double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                p.AdicionaSaldo(quantidade);
+
+                Console.WriteLine("Dados Atualizados!\n");
+                p.exibirDados();
+
+                Console.WriteLine("Entre com o valor para saque: ");
+                quantidade = Double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                p.RetiraSaldo(quantidade);
+                Console.WriteLine("Dados Atualizados!\n");
+                p.exibirDados();
+            }
+            else
+            {
+                Console.WriteLine("Tecla inválida!");
+            }
+
+
+
 
 
             /*
