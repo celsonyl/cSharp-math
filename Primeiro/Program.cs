@@ -12,13 +12,45 @@ namespace Primeiro
 
 
 
+            //Nullable
+            double? x = null;
+            double? y = 10;
 
+            double a = x ?? 5;
+            double b = y ?? 5;
 
-
-
-
-
+            Console.WriteLine(a);
+            Console.WriteLine(b);
             /*
+            double? x = null;
+            double? y = 10.0;
+            Console.WriteLine(y.GetValueOrDefault());
+
+            Console.WriteLine(x.HasValue);
+            Console.WriteLine(y.HasValue);
+            if (x.HasValue)
+                Console.WriteLine(x.Value);
+            else
+                Console.WriteLine("X é nullo");
+            if (y.HasValue)
+                Console.WriteLine(y.Value);
+            else
+            Console.WriteLine("Y é nullo");
+            */
+
+
+
+
+            //INSTANCIANDO STRUCT
+            /*
+            Point p;
+            p.X = 10;
+            p.Y = 30;
+            Console.WriteLine(p);
+             */
+
+
+            /* CALCULADORA
             Console.WriteLine("Entre o valor do raio: ");
             double raio = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
@@ -31,7 +63,10 @@ namespace Primeiro
             */
 
 
+
+
             // --------------------------EXERCICIO SAQUE----------------------------------------
+            /*
             Console.WriteLine("Entre com o numero da Conta: ");
             int numeroConta = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             Console.WriteLine("Entre com o titular da Conta: ");
@@ -81,7 +116,7 @@ namespace Primeiro
                 Console.WriteLine("Tecla inválida!");
             }
 
-
+            */
 
 
 
