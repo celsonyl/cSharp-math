@@ -9,10 +9,30 @@ namespace Primeiro
 
         static void Main(string[] args)
         {
+            double soma = 0;
+
+
+            Console.WriteLine("Digite o numero de Pessoas");
+            int n = int.Parse(Console.ReadLine());
+
+            double[] vect = new double[n];
+
+            for(int i = 0; i < n; i++){
+                vect[i] = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                soma += vect[i];
+            }
+            double media = soma / n;
+
+            Console.WriteLine("A média das alturas é: " + media.ToString("F2", CultureInfo.InvariantCulture));
+
+           
 
 
 
-            //Nullable
+
+
+            //Nullable-----------------------------------------------------------------
+            /*
             double? x = null;
             double? y = 10;
 
@@ -41,7 +61,7 @@ namespace Primeiro
 
 
 
-            //INSTANCIANDO STRUCT
+            //INSTANCIANDO STRUCT----------------------------------------------------------------------------
             /*
             Point p;
             p.X = 10;
@@ -50,7 +70,7 @@ namespace Primeiro
              */
 
 
-            /* CALCULADORA
+            /* CALCULADORA----------------------------------------------------------------------------------------
             Console.WriteLine("Entre o valor do raio: ");
             double raio = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
@@ -65,7 +85,7 @@ namespace Primeiro
 
 
 
-            // --------------------------EXERCICIO SAQUE----------------------------------------
+            // --------------------------EXERCICIO SAQUE------------------------------------------------------------
             /*
             Console.WriteLine("Entre com o numero da Conta: ");
             int numeroConta = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
