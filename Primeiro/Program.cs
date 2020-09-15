@@ -9,8 +9,35 @@ namespace Primeiro
 
         static void Main(string[] args)
         {
+            //VETOR TIPO CLASS------------------------------------------------------------------------------------
             double soma = 0;
+            Console.WriteLine("Digite a quantidade de produto!");
+            int n = int.Parse(Console.ReadLine());
 
+            Product[] vct = new Product[n];
+            for(int i = 0; i < n; i++){
+                Console.WriteLine("Digite o NOME e PREÇO dos produtos");
+                string name = Console.ReadLine();
+                double price = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                vct[i] = new Product { Name = name, Price = price };
+                soma += vct[i].Price;
+            }
+            double media = soma / n;
+            Console.WriteLine("A media dos preços é: " + media.ToString("F2", CultureInfo.InvariantCulture)); 
+
+
+
+
+
+
+
+
+
+
+            //VETORES TIPO STRUCT-------------------------------------------------------------
+            /*
+            double soma = 0;
 
             Console.WriteLine("Digite o numero de Pessoas");
             int n = int.Parse(Console.ReadLine());
@@ -24,11 +51,7 @@ namespace Primeiro
             double media = soma / n;
 
             Console.WriteLine("A média das alturas é: " + media.ToString("F2", CultureInfo.InvariantCulture));
-
-           
-
-
-
+            */
 
 
             //Nullable-----------------------------------------------------------------
