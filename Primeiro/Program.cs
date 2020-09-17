@@ -7,9 +7,39 @@ namespace Primeiro
     class Program
     {
 
+        //EX ESTUDANTE ALUGAR QUARTOS 
         static void Main(string[] args)
         {
+            Estudante[] vetor = new Estudante[10];
+            Console.WriteLine("Digite a quantidade de quartos serão alugados!");
+            int n = int.Parse(Console.ReadLine());
+
+            for(int i = 0; i < n; i++)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"Aluguel #{i+1}:");
+                Console.WriteLine("Digite seu Nome:");
+                string nome = Console.ReadLine();
+                Console.WriteLine("Digite seu E-mail");
+                string email = Console.ReadLine();
+                Console.WriteLine("Quarto:");
+                int q = int.Parse(Console.ReadLine());
+                vetor[q] = new Estudante(nome,email );
+
+            }
+            Console.WriteLine();
+            Console.WriteLine("Quartos ocupados");
+            for(int i = 0; i < 10; i++)
+            {
+                if (vetor[i] != null)
+                {
+                    Console.WriteLine(i + ":" + vetor[i]);
+                }
+            }
+
+
             //VETOR TIPO CLASS------------------------------------------------------------------------------------
+            /*
             double soma = 0;
             Console.WriteLine("Digite a quantidade de produto!");
             int n = int.Parse(Console.ReadLine());
@@ -25,12 +55,7 @@ namespace Primeiro
             }
             double media = soma / n;
             Console.WriteLine("A media dos preços é: " + media.ToString("F2", CultureInfo.InvariantCulture)); 
-
-
-
-
-
-
+            */
 
 
 
