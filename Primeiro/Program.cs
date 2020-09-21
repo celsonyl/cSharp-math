@@ -6,37 +6,50 @@ namespace Primeiro
 {
     class Program
     {
-
-        //EX ESTUDANTE ALUGAR QUARTOS 
         static void Main(string[] args)
         {
-            Estudante[] vetor = new Estudante[10];
-            Console.WriteLine("Digite a quantidade de quartos serão alugados!");
-            int n = int.Parse(Console.ReadLine());
+            int s1 = Calculadora.Sum(2,3,4);
+            Console.WriteLine(s1);
+            int s2 = Calculadora.Sum(2, 3, 4,7,9,6,4,10);
+            Console.WriteLine(s2);
 
-            for(int i = 0; i < n; i++)
-            {
-                Console.WriteLine();
-                Console.WriteLine($"Aluguel #{i+1}:");
-                Console.WriteLine("Digite seu Nome:");
-                string nome = Console.ReadLine();
-                Console.WriteLine("Digite seu E-mail");
-                string email = Console.ReadLine();
-                Console.WriteLine("Quarto:");
-                int q = int.Parse(Console.ReadLine());
-                vetor[q] = new Estudante(nome,email );
 
-            }
-            Console.WriteLine();
-            Console.WriteLine("Quartos ocupados");
-            for(int i = 0; i < 10; i++)
-            {
-                if (vetor[i] != null)
+
+
+
+
+
+
+
+            //EX ESTUDANTE ALUGAR QUARTOS------------------------------------------------------------------------------------
+            /*
+                Estudante[] vetor = new Estudante[10];
+                Console.WriteLine("Digite a quantidade de quartos serão alugados!");
+                int n = int.Parse(Console.ReadLine());
+
+                for(int i = 0; i < n; i++)
                 {
-                    Console.WriteLine(i + ":" + vetor[i]);
-                }
-            }
+                    Console.WriteLine();
+                    Console.WriteLine($"Aluguel #{i+1}:");
+                    Console.WriteLine("Digite seu Nome:");
+                    string nome = Console.ReadLine();
+                    Console.WriteLine("Digite seu E-mail");
+                    string email = Console.ReadLine();
+                    Console.WriteLine("Quarto:");
+                    int q = int.Parse(Console.ReadLine());
+                    vetor[q] = new Estudante(nome,email );
 
+                }
+                Console.WriteLine();
+                Console.WriteLine("Quartos ocupados");
+                for(int i = 0; i < 10; i++)
+                {
+                    if (vetor[i] != null)
+                    {
+                        Console.WriteLine(i + ":" + vetor[i]);
+                    }
+                }
+            */
 
             //VETOR TIPO CLASS------------------------------------------------------------------------------------
             /*
@@ -194,7 +207,7 @@ namespace Primeiro
 
             x = new Triangulo();
             y = new Triangulo();
-            
+
             Console.WriteLine("Entre com as medidas do triangulo X!");
              x.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
              x.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
@@ -207,7 +220,7 @@ namespace Primeiro
 
             double areaX = x.Area();
             double areaY = y.Area();
-          
+
             Console.WriteLine("Area de x = " + areaX.ToString("F4", CultureInfo.InvariantCulture));
             Console.WriteLine("Area de Y = " + areaY.ToString("F4", CultureInfo.InvariantCulture));
 
