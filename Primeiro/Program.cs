@@ -1,18 +1,34 @@
 ﻿using System;
 using System.Globalization;
 using System.Numerics;
-
+using System.Collections.Generic;
 namespace Primeiro
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string[] vect = new string[] { "Maria", "BOBA", "XERA CU" };
-            foreach(string obj in vect)
+            List<string> list = new List<string>();
+
+            list.Add("joao");
+            list.Add("OOOOO");
+            list.Add("XERA CU");
+            list.Add("PINTO");
+            list.Add("joaoAA");
+            list.Insert(2, "POSIÇÃO 2 OK");
+
+            foreach(string obj in list)
             {
-                Console.WriteLine(obj);
+                Console.WriteLine(obj); 
             }
+
+            Console.WriteLine(list.Count);
+
+            string s1 = list.Find(x => x[0] == 'P');
+            Console.WriteLine("PRIMEIRO NOME COM P É : "+s1);
+
+            string s2 = list.FindLast(x => x[0] == 'O');
+            Console.WriteLine("LAST O: " + s2);
 
 
             /*OUT IN ,REF
