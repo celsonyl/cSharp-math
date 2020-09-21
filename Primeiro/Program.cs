@@ -8,18 +8,27 @@ namespace Primeiro
     {
         static void Main(string[] args)
         {
+            string[] vect = new string[] { "Maria", "BOBA", "XERA CU" };
+            foreach(string obj in vect)
+            {
+                Console.WriteLine(obj);
+            }
+
+
+            /*OUT IN ,REF
             int s1 = Calculadora.Sum(2,3,4);
-            Console.WriteLine(s1);
             int s2 = Calculadora.Sum(2, 3, 4,7,9,6,4,10);
             Console.WriteLine(s2);
 
+            int a = 10;
+            int triple;
+            //out in
+            Calculadora.Triple(a,out triple);
+            Console.WriteLine(triple);
 
-
-
-
-
-
-
+            Calculadora.Triple(ref a);
+            Console.WriteLine(a);
+            */
 
             //EX ESTUDANTE ALUGAR QUARTOS------------------------------------------------------------------------------------
             /*
