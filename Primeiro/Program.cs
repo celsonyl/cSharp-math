@@ -8,21 +8,68 @@ namespace Primeiro
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Quantos funcionarios serão registrados?");
+            int func = int.Parse(Console.ReadLine());
+            List<Funcionario> list = new List<Funcionario>();
+            int count = 1;
+            for(int i = 0; i < func; i++)
+            {
+                Console.WriteLine("Funcionario " + count);
+                Console.WriteLine("ID:");
+                int id = int.Parse(Console.ReadLine());
+                Console.WriteLine("Nome: ");
+                string nome = Console.ReadLine();
+                Console.WriteLine("Salario: ");
+                double salario = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                list.Add(new Funcionario(id, nome, salario));
+                count++;
+            }
+
+            Console.WriteLine("Digite o ID do funcionário que receberá um aumento");
+            int findID = int.Parse(Console.ReadLine());
+            Funcionario emp = list.Find(x => x.Id == findID);
+
+            if (emp != null)
+            {
+                Console.WriteLine("Digite a porcentagem do aumento no salario");
+                double porcentagem = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                emp.AumentoSalario(porcentagem);
+            }
+            else
+            {
+                Console.WriteLine("ID não existe!");
+            }
+
+            Console.WriteLine("");
+            Console.WriteLine("Lista atualizada dos Funcionários");
+            foreach(Funcionario obj in list)
+            {
+                Console.WriteLine(obj);
+            }
+
+            
+            
+            
+
+            
+
+
+            /*
             List<string> list = new List<string>();
 
-            list.Add("joao");
-            list.Add("OOOOO");
+            list.Add("Joao");
+            list.Add("Maria");
             list.Add("XERA CU");
             list.Add("PINTO");
-            list.Add("joaoAA");
-            list.Insert(2, "POSIÇÃO 2 OK");
+            list.Add("ACLEBER");
 
-            foreach(string obj in list)
+            foreach (string obj in list)
             {
                 Console.WriteLine(obj); 
             }
+            Console.WriteLine(list.Count + " Elementos na lista");
+            Console.WriteLine("------------------------------------------");
 
-            Console.WriteLine(list.Count);
 
             string s1 = list.Find(x => x[0] == 'P');
             Console.WriteLine("PRIMEIRO NOME COM P É : "+s1);
@@ -30,6 +77,38 @@ namespace Primeiro
             string s2 = list.FindLast(x => x[0] == 'O');
             Console.WriteLine("LAST O: " + s2);
 
+            int pos1 = list.FindIndex(x => x[0] == 'X');
+            Console.WriteLine("First position 'X': " + pos1);
+
+            int pos2 = list.FindLastIndex(x => x[0] == 'A');
+            Console.WriteLine("Last position 'X': " + pos2);
+
+            List<string> list2 = list.FindAll(x => x.Length == 5);
+            Console.WriteLine("------------------------------------------");
+            Console.WriteLine("NOMES COM 5 CARACTERS!");
+
+            foreach(string obj in list2)
+            {
+                Console.WriteLine(obj);
+            }
+
+            list.Remove("Maria");
+            Console.WriteLine("------------------------------------------");
+            Console.WriteLine("REMOVENDO A MARIA");
+            foreach(string obj in list)
+            {
+                Console.WriteLine(obj);
+            }
+            Console.WriteLine("------------------------------------------");
+            Console.WriteLine("REMOVENDO GERAL COM A LETRA P");
+
+            list.RemoveAll(x => x[0] == 'P');
+            foreach (string obj in list)
+            {
+                Console.WriteLine(obj);
+            }
+            -----------------------------------------------------------------------------------------------------
+            */
 
             /*OUT IN ,REF
             int s1 = Calculadora.Sum(2,3,4);
