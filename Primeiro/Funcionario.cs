@@ -19,7 +19,7 @@ namespace Primeiro
 
         public override string ToString()
         {
-            return Id + "," + Nome + "," + Salario;
+            return "ID:" + Id + "," + "Nome: "+ Nome + "," + "Salario: " +Salario;
         }
 
         public void AumentoSalario(double porcentagem)
